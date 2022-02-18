@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Rectangles</title>
+    <link rel="stylesheet" href="/stylesheets/showRectangles.css">
+</head>
+<body>
+    <h1>View Rectangle</h1>
+    <ul>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Width</th>
+            <th>Height</th>
+            <th>Color</th>
+            <th>Border</th>
+            <th>Border Color</th>
+            <th colspan="1"></th>
+          </tr>
+          <% rows.forEach(function(r) { %>
+            <tr>
+              <td id="name"> 
+                  <%= r.rectanglename %>
+                </a>
+              </td>
+              <td id="width">
+                <%= r.rectanglewidth %>
+              </td>
+              <td id="height">
+                <%= r.rectangleheight %>
+              </td>
+              <td id="color">
+                <%= r.rectanglecolor %>
+              </td>
+              <td id="border">
+                <%= r.rectangleborder %>
+              </td>
+              <td id="borderColor">
+                <%= r.rectanglebordercolor %>
+              </td>
+              <td id="edit"><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/editRectangles/<%= r.id %>">Edit</a></td>
+            </tr>
+            <% }); %>
+              
+        </table>
+      </ul>
+      <p align="center">
+        <form action="http://localhost:9000/database">
+          <button type="submit">View All Rectangles</button>
+      </form>
+      </p>
+      <br>
+     
+      <div id="rectangleBox"></div>
+      <script src="/rectangle.js"></script>
+
+</body>
+</html>

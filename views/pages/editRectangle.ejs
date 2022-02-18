@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include ("../partials/header.ejs") %>
+  <title>Edit Current Rectangle</title>
+</head>
+
+<body>
+  <h1>Edit Rectangle</h1>
+  <div class="container">
+    <% rows.forEach(function(r) { %>
+    <form id="inputtedform" action="/rectangles/<%= r.id %>" method="post">
+            <div class="field">
+                <label for="rectangle_name">Name</label><br>
+                <input type="text" value= "<%= r.rectanglename %>" name="name" id="inputtedname" required>
+              </div>
+              <div class="field">
+                <label for="rectangle_width">Width</label><br>
+                <input type="number"  min="0" max="1000" value="<%= r.rectanglewidth %>" name="width" id="inputtedwidth" required>
+              </div>
+              <div class="field">
+                <label for="rectangle_height">Height</label><br>
+                <input type="number"  min="0" max="1000" value="<%= r.rectangleheight %>" name="height" id="inputtedheight" required>
+              </div>
+              <div class="field">
+                <label for="rectangle_color">Color</label><br>
+                <select type="text" value="<%= r.rectanglecolor %>"  name="color" id="inputtedcolor">
+                  <option value="Red">Red</option>
+                  <option value="Green">Green</option>
+                  <option value="Orange">Orange</option>
+                  <option value="Yellow">Yellow</option>
+                  <option value="Black">Black</option>
+                  <option value="Pink">Pink</option>
+                  <option value="Blue">Blue</option>
+                  <option value="Purple">Purple</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="rectangle_border">Border</label><br>
+                <select name="border" id="inputtedborder">
+                    <option selected="selected" value="<%= r.rectangleborder %>"><%= r.rectangleborder %></option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option></select>
+              </div>
+              <div class="field">
+                <label for="rectangle_border_color">Border Color</label><br>
+                <select name="borderColor" id="inputtedbordercolor">
+                    <option selected="selected" value="<%= r.rectanglebordercolor %>"><%= r.rectanglebordercolor %></option>
+                  <option value="Red">Red</option>
+                  <option value="Green">Green</option>
+                  <option value="Orange">Orange</option>
+                  <option value="Yellow">Yellow</option>
+                  <option value="Black">Black</option>
+                  <option value="Pink">Pink</option>
+                  <option value="Blue">Blue</option>
+                  <option value="Purple">Purple</option>
+                </select>
+              </div>
+              <div class="actions">
+                <input type="submit" name="commit" id="valid" value="Create">
+                <a href="/viewRectangles/<%= r.id %>">View Current Rectangle</a>
+              </div>
+        <% }); %>
+      </form>
+  </div>
+</body>
+
+</html>

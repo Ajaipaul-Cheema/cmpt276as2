@@ -1,0 +1,28 @@
+
+p {
+    color: black;
+}
+
+th {
+    background-color: #e6e6e6;
+    text-align: left;
+}
+table,tr,td,th {
+    table-layout: fixed;
+    height: 31px;
+    width: 130px;
+    padding: 0px;
+    border: 2px solid;
+    border-color: rgb(117, 102, 102);
+    border-collapse: collapse;
+}
+th, td {
+    padding-left: 5px;
+}
+th {
+    text-align: left;
+    background-color: #d0fff9;
+}
+a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

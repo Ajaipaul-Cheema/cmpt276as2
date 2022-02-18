@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <%- include ("../partials/header.ejs") %>
+  <title>Rectangles</title>
+   <link rel="stylesheet" href="/stylesheets/rectangles.css"/>
 </head>
 
 <body>
 
-<%- include ("../partials/nav.ejs") %>
+  <div class="container">
+    <h3>Rectangles</h3>
+    <ul>
+      <table>
+        <tr>
+          <th colspan="1"></th>
+          <th>Name</th>
+          <th>Width</th>
+          <th>Height</th>
+          <th>Color</th>
+          <th>Border</th>
+          <th>Border Color</th>
+          <th colspan="1"></th>
+        <% rows.forEach(function(r) { %>
+        </tr>
+          <tr>
+            <td>
+              <%= r.id %>
+            </td>
+            <td>
+              <a href="/viewRectangles/<%= r.id %>"> 
+                <%= r.rectanglename %>
+              </a>
+            </td>
+            <td>
+              <%= r.rectanglewidth %>
+            </td>
+            <td>
+              <%= r.rectangleheight %>
+            </td>
+            <td>
+              <%= r.rectanglecolor %>
+            </td>
+            <td>
+              <%= r.rectangleborder %>
+            </td>
+            <td>
+              <%= r.rectanglebordercolor %>
+            </td>
+            <form id="inputtedform" action="/db/<%= r.id %>" method="post">
+              <td id="delete">
+                <form action="http://localhost:9000/database">
+                  <button type="submit">Delete</button>
+               </form>
+              </td>
+            </form>
+          </tr>
+          <% }); %>
+            
+      </table>
+    </ul>
+    <ul>
+      <p align="center">
+        <a href="/newRectangle"><button>Add New Rectangle</button></a>
+      </p>
+    </ul>
 
-<div class="container">
-<h2>Database Results</h2>
-
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
-    <% }); %>
-</ul>
-
-</div>
+  </div>
 
 </body>
+
 </html>

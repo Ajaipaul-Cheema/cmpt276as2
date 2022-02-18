@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Rectangle</title>
+</head>
+<body>
+    <form id="inputtedform" action="/addrectangle" method="post">
+        <div class="field">
+          <label for="rectangle_name">Name</label><br>
+          <input type="text" name="name" id="inputtedname">
+        </div>
+        <div class="field">
+          <label for="rectangle_width">Width</label><br>
+          <input type="number" name="width" id="inputtedwidth">
+        </div>
+        <div class="field">
+          <label for="rectangle_height">Height</label><br>
+          <input type="number" name="height" id="inputtedheight">
+        </div>
+        <div class="field">
+          <label for="rectangle_color">Color</label><br>
+          <input type="text" name="color" id="inputtedcolor">
+        </div>
+        <div class="field">
+          <label for="rectangle_border">Border</label><br>
+          <select name="border" id="inputtedborder">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option></select>
+        </div>
+        <div class="field">
+          <label for="rectangle_border_color">Border Color</label><br>
+          <select name="borderColor" id="inputtedbordercolor">
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Orange">Orange</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Black">Black</option>
+            <option value="Pink">Pink</option>
+            <option value="Blue">Blue</option>
+            <option value="Purple">Purple</option>
+          </select>
+        </div>
+        <div class="actions">
+          <input type="submit" name="commit" value="Create">
+          <a href="./index.html">Go to main page</a>
+        </div>
+      </form>
+</body>
+</html>
