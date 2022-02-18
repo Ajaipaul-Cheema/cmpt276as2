@@ -59,8 +59,6 @@ app.post('/addrectangle', (req, res) => {
     var border = req.body.border;
     var borderColor = req.body.borderColor;
   
-  //  res.send(`name: ${name}, width: ${width}, height: ${height}, color: ${color}
-   // , border: ${border}, bordercolor: ${borderColor}`);
     pool.query('insert into rectangle(rectanglename, rectanglewidth, rectangleheight, rectanglecolor, rectangleborder, rectanglebordercolor) values($1, $2, $3, $4, $5, $6)', [name, width, height, color, border, borderColor], (error, result) => {
       var getUsersQuery = `SELECT * FROM rectangle`;
       pool.query(getUsersQuery, (error, result) => {
